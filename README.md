@@ -6,7 +6,8 @@ _happy little queue_
 
 When your Go code does not panic  
 When your infra does not fail  
-When data is small  
+When your data is small  
+When your data is temporary  
 When all you need is a happy little queue  
 
 ```go
