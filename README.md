@@ -31,7 +31,7 @@ go worker.Work()
 
 ...
 
-// and you send something
+// and send something
 sender := hq.Sender{
     Redis:  rdb,
     Queue:  "my-queue",
