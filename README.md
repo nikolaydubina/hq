@@ -12,19 +12,17 @@ When all you need is a happy little queue
 
 ```go
 // once you have a redis connection
-// "github.com/go-redis/redis/v8"
-rdb := redis.NewClient(...)             
+rdb := redis.NewClient(...)             // "github.com/go-redis/redis/v8"     
 
 ...
 
 // you can boot a lightweight worker
-// interface { Handle(message []byte) error }
 worker := hq.ReceiveWorker{
     Redis:      rdb,
     Queue:      "my-queue",
     PoolIdle:   time.Minute,            // recommended!
     PoolActive: time.Microsecond * 50,  // recommended! 
-    Handler:    &handler,               
+    Handler:    &handler,               // interface { Handle(message []byte) error }
     NumWorkers: 10,                     // recommended!
 }
 go worker.Work()
