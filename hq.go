@@ -50,7 +50,10 @@ func (r *ReceiveWorker) work(id uint, done chan uint) {
 			return
 		case <-t.C:
 			val, err := r.Redis.LPop(context.Background(), r.Queue).Result()
-			if val == "" || errors.Is(err, redis.Nil) {
+			if val == "" || err != nil {
+				if err != nil && !errors.Is(err, redis.Nil) {
+					log.Printf("hq: %q: redis error: %s", r.Queue, err)	
+				}
 				done <- id
 				return
 			}
