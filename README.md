@@ -1,6 +1,6 @@
 _happy little queue_
 
-97% covered, 80LOC, integration test, auto-cleaning, lightweight..
+97% covered, 80LOC, integration test, auto-cleaning, lightweight
 
 ![](doc/bobross.jpg)
 
