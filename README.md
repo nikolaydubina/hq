@@ -39,6 +39,9 @@ sender := hq.Sender{
     TTL:    time.Hour * 4,
 }
 sender.Send([]byte("my-bytes"))
+
+// in redis it is single list
+// LLEN my-queue
 ```
 
 P.S. "happy" because optimistic
