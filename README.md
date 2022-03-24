@@ -4,10 +4,10 @@ _happy little queue_
 
 ![](doc/bobross.jpg)
 
-When your Go code does not panic.  
-When your infra does not fail.  
-When data is small.  
-When all you need is a happy little queue.
+When your Go code does not panic  
+When your infra does not fail  
+When data is small  
+When all you need is a happy little queue  
 
 ```go
 // once you have a redis connection
