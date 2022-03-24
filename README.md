@@ -1,6 +1,8 @@
-_happy little queue_
+## _happy little queue_
 
 97% covered, 80LOC, integration test, auto-cleaning, lightweight
+
+[![Go Reference](https://pkg.go.dev/badge/github.com/nikolaydubina/hq.svg)](https://pkg.go.dev/github.com/nikolaydubina/hq)
 
 ![](doc/bobross.jpg)
 
