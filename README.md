@@ -1,6 +1,6 @@
 ## _happy little queue_
 
-97% covered, 80LOC, integration test, auto-cleaning, lightweight
+97% covered, 80LOC, 80_000RPS, integration test, auto-cleaning, lightweight
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/nikolaydubina/hq.svg)](https://pkg.go.dev/github.com/nikolaydubina/hq)
 
@@ -43,5 +43,7 @@ sender.Send([]byte("my-bytes"))
 // in redis it is single list
 // LLEN my-queue
 ```
+
+It is as fast as Redis, so [should](https://www.digitalocean.com/community/tutorials/how-to-perform-redis-benchmark-tests) be around 80_000RPS.
 
 P.S. "happy" because optimistic
