@@ -49,6 +49,7 @@ func TestSendAndReceive(t *testing.T) {
 		PoolActive: time.Microsecond * 5,
 		Handler:    &handler,
 		NumWorkers: 10,
+		Batch:      100,
 	}
 
 	go worker.Work()

@@ -16,6 +16,7 @@ type ReceiveWorker struct {
 	PoolActive time.Duration
 	Handler    interface{ Handle(message []byte) error }
 	NumWorkers uint
+	Batch      uint
 	stop       chan bool
 }
 
@@ -49,16 +50,18 @@ func (r *ReceiveWorker) work(id uint, done chan uint) {
 		case <-r.stop:
 			return
 		case <-t.C:
-			val, err := r.Redis.LPop(context.Background(), r.Queue).Result()
-			if val == "" || err != nil {
+			batch, err := r.Redis.LPopCount(context.Background(), r.Queue, int(r.Batch)).Result()
+			if len(batch) == 0 || err != nil {
 				if err != nil && !errors.Is(err, redis.Nil) {
-					log.Printf("hq: %q: redis error: %s", r.Queue, err)	
+					log.Printf("hq: %s: redis error: %s", r.Queue, err)
 				}
 				done <- id
 				return
 			}
-			if err := r.Handler.Handle([]byte(val)); err != nil {
-				log.Printf("hq: %q: error: %s", r.Queue, err)
+			for _, m := range batch {
+				if err := r.Handler.Handle([]byte(m)); err != nil {
+					log.Printf("hq: %s: error: %s", r.Queue, err)
+				}
 			}
 		}
 	}

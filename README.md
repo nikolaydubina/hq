@@ -1,6 +1,6 @@
 ## _happy little queue_
 
-97% covered, 80LOC, 80_000RPS, integration test, auto-cleaning, lightweight
+97% covered, 90LOC, 80_000RPS, integration test, auto-cleaning, lightweight
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/nikolaydubina/hq.svg)](https://pkg.go.dev/github.com/nikolaydubina/hq)
 
@@ -26,6 +26,7 @@ worker := hq.ReceiveWorker{
     PoolActive: time.Microsecond * 50,  // recommended! 
     Handler:    &handler,               // interface { Handle(message []byte) error }
     NumWorkers: 10,                     // recommended!
+    Batch:      100,                    // recommended!
 }
 go worker.Work()
 
