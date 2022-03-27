@@ -24,9 +24,9 @@ worker := hq.ReceiveWorker{
     Queue:      "my-queue",
     PoolIdle:   time.Minute,            // recommended!
     PoolActive: time.Microsecond * 50,  // recommended! 
-    Handler:    &handler,               // interface { Handle(message []byte) error }
     NumWorkers: 10,                     // recommended!
     Batch:      100,                    // recommended!
+    Handler:    &handler,               // interface { Handle(message []byte) error }
 }
 go worker.Work()
 
