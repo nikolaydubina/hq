@@ -23,7 +23,7 @@ worker := hq.ReceiveWorker{
     Redis:      rdb,
     Queue:      "my-queue",
     PoolIdle:   time.Minute,            // recommended!
-    PoolActive: time.Microsecond * 50,  // recommended! 
+    PoolActive: time.Millisecond * 50,  // recommended! 
     NumWorkers: 10,                     // recommended!
     Batch:      100,                    // recommended!
     Handler:    &handler,               // interface { Handle(message []byte) error }
