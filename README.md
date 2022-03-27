@@ -4,7 +4,7 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/nikolaydubina/hq.svg)](https://pkg.go.dev/github.com/nikolaydubina/hq)
 
-![](doc/bobross.jpg)
+![](bobross.jpg)
 
 When your Go code does not panic  
 When your infra does not fail  
