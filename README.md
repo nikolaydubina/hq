@@ -3,6 +3,7 @@
 97% covered, 90LOC, 80_000RPS, integration test, auto-cleaning, lightweight
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/nikolaydubina/hq.svg)](https://pkg.go.dev/github.com/nikolaydubina/hq)
+[![Go Report Card](https://goreportcard.com/badge/github.com/nikolaydubina/hq)](https://goreportcard.com/report/github.com/nikolaydubina/hq)
 
 ![](bobross.jpg)
 
