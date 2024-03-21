@@ -4,6 +4,8 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/nikolaydubina/hq.svg)](https://pkg.go.dev/github.com/nikolaydubina/hq)
 [![Go Report Card](https://goreportcard.com/badge/github.com/nikolaydubina/hq)](https://goreportcard.com/report/github.com/nikolaydubina/hq)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/nikolaydubina/hq/badge)](https://securityscorecards.dev/viewer/?uri=github.com/nikolaydubina/hq)
+
 
 ![](bobross.jpg)
 
